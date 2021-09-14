@@ -1,0 +1,5 @@
+db_address: db-slave.rds.aliyun.com
+oss_config:
+  Port: 8080
+  Name: liuyibao
+  Password: 123456
