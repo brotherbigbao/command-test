@@ -11,8 +11,15 @@ var rootCmd = &cobra.Command{
 	Short: "Hugo is a very fast static site generator",
 	Long: "Hugo is a very fast static site generator",
 	Run: func(cmd *cobra.Command, args []string) {
-
+		fmt.Println("hello world")
 	},
+}
+
+var name *string
+
+func init()  {
+	name = rootCmd.PersistentFlags().StringP("name", "n", "YOUR NAME", "Author name for copyright attribution")
+	rootCmd.Flags()
 }
 
 func Execute()  {
@@ -20,4 +27,5 @@ func Execute()  {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+	fmt.Println(*name)
 }
